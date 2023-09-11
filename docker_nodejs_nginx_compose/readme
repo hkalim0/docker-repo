@@ -1,0 +1,11 @@
+Build and Run the Containers:
+In your project directory, run the following commands to build and start the containers:
+
+bash Command
+
+docker-compose build
+docker-compose up
+
+anther way 
+
+docker-compose -d --build
