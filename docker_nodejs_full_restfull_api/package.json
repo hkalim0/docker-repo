@@ -1,0 +1,17 @@
+{
+  "name": "dockerized-nodejs-app",
+  "version": "1.0.0",
+  "description": "A Dockerized Node.js application with MongoDB and Redis",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.13.4",
+    "body-parser": "^1.19.1",
+    "redis": "^3.1.2"
+  }
+}
