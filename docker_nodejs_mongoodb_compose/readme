@@ -1,0 +1,35 @@
+**Build and Run the Containers:**
+In your project directory, run the following commands to build and start the containers:
+
+*bash Command for compose*
+
+docker-compose build
+docker-compose up
+
+**Another way** 
+
+**Run a Container Under a Specific Name**
+
+docker container run --name [container_name] [docker_image]
+docker container run --name container_instance e98b6ec72f51
+
+
+**Run a Container in the Background (Detached Mode)**
+
+docker container run -d [docker_image]
+docker container run -d e98b6ec72f51
+
+
+**Run a Container Interactively**
+
+docker container run -it [docker_image] /bin/bash
+
+**Run a Container and Publish Container Ports**
+
+-p [host_ip]:[host_port]:[container_port]
+docker container run -p 8080:80 [docker_image]
+
+**Run a Container and Mount Host Volumes**
+
+-v [/host/volume/location]:[/container/storage]
+docker container run -v [/host/volume/location]:[/container/storage] [docker_image]

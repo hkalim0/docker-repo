@@ -1,0 +1,21 @@
+version: '3'
+services:
+  nodejs-app:
+    build:
+      context: .
+    ports:
+      - '3000:3000'
+    depends_on:
+      - mongodb
+    networks:
+      - my-network
+
+  mongodb:
+    image: mongo
+    ports:
+      - '27017:27017'
+    networks:
+      - my-network
+
+networks:
+  my-network:
