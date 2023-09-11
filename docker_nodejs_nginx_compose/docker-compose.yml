@@ -5,6 +5,8 @@ services:
       context: .
     ports:
       - '3000:3000'
+    networks:
+      - my-network
 
   nginx:
     build:
@@ -14,3 +16,8 @@ services:
       - '80:80'
     depends_on:
       - nodejs-app
+    networks:
+      - my-network
+
+networks:
+  my-network:
