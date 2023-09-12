@@ -1,7 +1,9 @@
 version: '3'
 services:
-  node-app:
+  nodejs-app:
     build:
       context: .
     ports:
-      - "3000:3000"
+      - '3000:3000'
+    volumes:
+      - myapp-data:/usr/src/app
