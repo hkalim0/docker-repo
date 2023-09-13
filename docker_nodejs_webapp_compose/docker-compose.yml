@@ -6,4 +6,4 @@ services:
     ports:
       - '3000:3000'
     volumes:
-      - myapp-data:/usr/src/app
+      - ./home/:/usr/src/app
