@@ -11,5 +11,4 @@ services:
       - "3000:3000"
     depends_on:
       - redis
-    volumes:
-      - myapp-data:/usr/src/app
+
