@@ -1,0 +1,10 @@
+version: '3'
+services:
+  backend:
+    image: nodejs:latest
+  frontend:
+    image: angular/ngcontainer:latest
+  db:
+    image: mysql:latest     
+
+
