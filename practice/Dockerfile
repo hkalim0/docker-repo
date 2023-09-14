@@ -5,3 +5,5 @@ ENV name=abc
 RUN pwd>/tmp/1stpwd.txt
 RUN cd /tmp/
 RUN pwd>/tmp/2ndpwd.txt
+WORKDIR /tmp
+RUN pwd>/tmp/3rdpwd.txt
