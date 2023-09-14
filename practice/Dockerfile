@@ -7,3 +7,5 @@ RUN cd /tmp/
 RUN pwd>/tmp/2ndpwd.txt
 WORKDIR /tmp
 RUN pwd>/tmp/3rdpwd.txt
+RUN apt-get update && apt-get install -y openssh-server && apt-get install -y python
+
