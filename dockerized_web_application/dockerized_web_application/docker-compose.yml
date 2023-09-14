@@ -1,0 +1,43 @@
+version: '3'
+services:
+  angular-app:
+    image: angular/ngcontainer:latest
+    container_name: angular
+    ports:
+      - "4200:4200"  # Replace with the appropriate port if needed
+    depends_on:
+      - backend
+    volumes:
+      - ./angular-app:/app  # Mount your Angular app files into the container if needed
+
+  backend:
+    image: node:14  # Replace with your desired Node.js version
+    container_name: backend
+    ports:
+      - "3000:3000"  # Replace with the appropriate port if needed
+    volumes:
+      - ./backend:/app  # Mount your Node.js backend files into the container if needed
+
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    ports:
+      - "80:80"  # Map container port 80 to host port 80
+    volumes:
+      - ./nginx-config:/etc/nginx/conf.d  # Mount your NGINX configuration into the container if needed
+    depends_on:
+      - angular-app
+      - backend
+
+  mysql:
+    image: mysql:latest
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: example_root_password  # Set your desired root password
+      MYSQL_DATABASE: example_db_name  # Set your desired database name
+      MYSQL_USER: example_db_user  # Set your desired database user
+      MYSQL_PASSWORD: example_db_password  # Set your desired database user password
+    ports:
+      - "3306:3306"  # Map container port 3306 to host port 3306
+    volumes:
+      - ./mysql-data:/var/lib/mysql  # Mount a volume for MySQL data persistence
